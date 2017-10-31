@@ -8,82 +8,34 @@
 
   <title>What's the Weather?</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <style>
-    html {
-      height: 100%;
-    }
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/skeleton.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #42bff4;
-      text-align: center;
-      color: white;
-
-      min-height: 100%;
-      display: grid;
-      grid-template-rows: 1fr auto;
-    }
-
-    img {
-      max-width: 300px;
-      height: auto;
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -20%);
-    }
-
-    .footer {
-      grid-row-start: 2;
-      grid-row-end: 3;
-    }
-
-    .center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .btn {
-      background-color: #008CBA;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-    }
-
-    .top-layer {
-      z-index: 1;
-    }
-
-    #searchQuery {
-      border: none;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-    }
-  </style>
 </head>
 
 <body>
-  <h1 class="top-layer">What's the Weather</h1>
-  <img src="res/logo.png"></img>
-  <div class="center top-layer">
-    <div id="search">
-      <input type="text" placeholder="Enter a location" id="searchQuery">
-      <input type="submit" class="btn" onclick="getQuery()">
+  <div class="container">
+    <div class="row">
+      <h1>What's the Weather</h1>
+    </div>
+    <div class="row">
+      <img src="res/logo.png"></img>
+    </div>
+    <div class="row">
+      <div id="search">
+        <input id="searchQuery" type="text" placeholder="Enter a location">
+        <input id="submit" type="button" value="submit" submit="getQuery()">
+      </div>
+    </div>
+    <div class="row">
+      <div id="content">
+      </div>
     </div>
   </div>
-  <div id="content">
-  </div>
   <footer>
-    <h3>Created At <a href="https://petcs.ca/">PETCS</a>@2017</h3>
+    <h5>Created At <a style="color: yellow" href="https://petcs.ca/">PETCS</a>@2017</h5>
+    <a href="https://github.com/Squishy123/weather-app"><img src="res/GitHub-Mark-32px.png"></img></a>
   </footer>
   <script type="text/javascript" src="index.js"></script>
 </body>

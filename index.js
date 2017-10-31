@@ -14,15 +14,20 @@ async function getForecast(key, cityName) {
   return data;
 }
 
+//Update our site with the search information
 function getQuery() {
+  let input = document.getElementById("searchQuery").value;
   let c = document.getElementById("content");
   //clear html
-  c.innerHTML = "";
+  c.innerHTML = '<h1>'+input+'</h1>';
 
-  let input = document.getElementById("searchQuery").text;
   getForecast(key, input).then(function(data) {
-    c.innerHTML += '<h2>' + data.weather[0].description + '</h2>';
-    c.innerHTML += '<h3>Temperature: ' + data.main.temp + ' °C</h3>';
-    c.innerHTML += '<h3>Pressure: ' + data.main.pressure + ' kPa</h3>';
+    c.innerHTML += '<h4>' + data.weather[0].description + '</h4>';
+    c.innerHTML += '<p>Temperature: ' + data.main.temp + ' °C<br>Pressure: ' + data.main.pressure + ' kPa</p>';
   });
 }
+
+//When we click enter, get the search query
+document.getElementById("searchQuery").addEventListener("keydown", function(event) {
+  if(event.which === 13) getQuery();
+});
