@@ -14,10 +14,15 @@ async function getForecast(key, cityName) {
   return data;
 }
 
-let c = document.getElementById("content");
+function getQuery() {
+  let c = document.getElementById("content");
+  //clear html
+  c.innerHTML = "";
 
-getForecast(key, "Toronto, ca").then(function(data) {
-  c.innerHTML += '<h2>'+data.weather[0].description+'</h2>';
-  c.innerHTML += '<h3>Temperature: ' + data.main.temp+' °C</h3>';
-  c.innerHTML += '<h3>Pressure: ' + data.main.pressure+' kPa</h3>';
-});
+  let input = document.getElementById("searchQuery").text;
+  getForecast(key, input).then(function(data) {
+    c.innerHTML += '<h2>' + data.weather[0].description + '</h2>';
+    c.innerHTML += '<h3>Temperature: ' + data.main.temp + ' °C</h3>';
+    c.innerHTML += '<h3>Pressure: ' + data.main.pressure + ' kPa</h3>';
+  });
+}
