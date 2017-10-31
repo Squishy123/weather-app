@@ -7,7 +7,7 @@ let key = "b370a49d76395c80b0b3652da6a0696f";
  * @param object {latitude, longitude}
  **/
 async function getForecast(key, cityName) {
-  let response = await fetch("http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=" + key + "&units=metric");
+  let response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=" + key + "&units=metric");
   // only proceed once promise is resolved
   let data = await response.json();
   // only proceed once second promise is resolved
