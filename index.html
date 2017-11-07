@@ -13,7 +13,6 @@
   <link href="css/style.css" rel="stylesheet">
 
 </head>
-
 <body>
   <div class="container">
     <div class="row">
@@ -25,19 +24,22 @@
     <div class="row">
       <div id="search">
         <input id="searchQuery" type="text" placeholder="Enter a location">
-        <input id="submit" type="button" value="submit" submit="getQuery()" onclick="getQuery()">
+        <!--<input id="submit" type="button" value="submit" submit="getQuery()" onclick="getQuery();updateMap();">-->
       </div>
     </div>
     <div class="row">
       <div id="content">
       </div>
     </div>
+    <div class="row">
+      <div id="googleMap" style="width:100%;height:400px;"></div>
+      <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap" async defer></script>
+    </div>
   </div>
   <footer>
     <h5>Created At <a style="color: yellow" href="https://petcs.ca/">PETCS</a>@2017</h5>
     <a href="https://github.com/Squishy123/weather-app"><img src="res/GitHub-Mark-32px.png"></img></a>
   </footer>
-  <script type="text/javascript" src="index.js"></script>
 </body>
-
+  <script type="text/javascript" src="index.js"></script>
 </html>
